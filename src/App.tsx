@@ -43,7 +43,7 @@ function App() {
 
   const decrementMenu = (menuId) => {
     const newCounts = [...counts];
-    newCounts[menuId]--;
+    if (counts[menuId] > 0) newCounts[menuId]--;
     setCounts(newCounts);
   };
   const incrementMenu = (menuId) => {
