@@ -9,6 +9,12 @@ export default function App() {
       <h1 className="text-2xl font-bold text-zinc-900 mb-6 text-center">
         メニュー
       </h1>
+      <ul>
+        <li className="text-md font-bold">牛丼</li>
+        <li className="text-md font-bold">牛丼</li>
+        <li className="text-md font-bold">牛丼</li>
+      </ul>
+      <p className="text-md font-bold">合計: 0円</p>
     </div>
   );
 }
