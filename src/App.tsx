@@ -5,10 +5,10 @@ import { useState } from "react";
 
 const Menu = (props) => {
   const decrement = () => {
-    props.onDecrement();
+    props.onDecrement(props.menuId);
   };
   const increment = () => {
-    props.onIncrement();
+    props.onIncrement(props.menuId);
   };
   return (
     <li className={`${menuBox}`}>
@@ -41,17 +41,22 @@ const menuBox =
 function App() {
   const [counts, setCounts] = useState([0, 0, 0]);
 
-  const decrementMenu = () => {
-    console.log("-クリックされました");
+  const decrementMenu = (menuId) => {
+    const newCounts = [...counts];
+    newCounts[menuId]--;
+    setCounts(newCounts);
   };
-  const incrementMenu = () => {
-    console.log("+クリックされました");
+  const incrementMenu = (menuId) => {
+    const newCounts = [...counts];
+    newCounts[menuId]++;
+    setCounts(newCounts);
   };
 
   const menuItems = menus.map((menu) => {
     return (
       <Menu
         key={menu.id}
+        menuId={menu.id}
         count={counts[menu.id]}
         label={menu.label}
         price={menu.price}
