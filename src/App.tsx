@@ -3,8 +3,8 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { useState } from "react";
 
-const Menu = () => {
-  return <li className={`${menuBox}`}>牛丼</li>;
+const Menu = (props) => {
+  return <li className={`${menuBox}`}>{props.label}</li>;
 };
 
 const menuBox = "text-md font-bold border rounded-2xl mt-2 p-2 border-gray-500";
@@ -16,9 +16,9 @@ function App() {
         メニュー
       </h1>
       <ul>
-        <Menu />
-        <Menu />
-        <Menu />
+        <Menu label="牛丼" />
+        <Menu label="カレー" />
+        <Menu label="サラダ" />
       </ul>
       <p className="text-md font-bold text-right mt-3 mr-2">合計: 0円</p>
     </div>
