@@ -14,13 +14,13 @@ const Menu = (props) => {
   return (
     <li className={`${menuBox}`}>
       <button
-        className="w-8 h-8 border rounded flex items-center justify-center font-bold mr-2 bg-gray-200"
+        className="w-8 h-8 border rounded flex items-center justify-center font-bold mr-2 bg-gray-200 cursor-pointer"
         onClick={decrement}
       >
         -
       </button>
       <button
-        className="w-8 h-8 border rounded flex items-center justify-center font-bold mr-5 bg-gray-200"
+        className="w-8 h-8 border rounded flex items-center justify-center font-bold mr-5 bg-gray-200 cursor-pointer"
         onClick={increment}
       >
         +
