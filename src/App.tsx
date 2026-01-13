@@ -10,9 +10,9 @@ export default function App() {
         メニュー
       </h1>
       <ul>
-        <li className="text-md font-bold">牛丼</li>
-        <li className="text-md font-bold">牛丼</li>
-        <li className="text-md font-bold">牛丼</li>
+        <li className="text-md font-bold border rounded-2xl m-2 p-2">牛丼</li>
+        <li className="text-md font-bold border rounded-2xl m-2 p-2">牛丼</li>
+        <li className="text-md font-bold border rounded-2xl m-2 p-2">牛丼</li>
       </ul>
       <p className="text-md font-bold">合計: 0円</p>
     </div>
