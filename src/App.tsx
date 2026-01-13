@@ -17,7 +17,7 @@ export default function App() {
         <li className={`${menuBox}`}>牛丼</li>
         <li className={`${menuBox}`}>牛丼</li>
       </ul>
-      <p className="text-md font-bold">合計: 0円</p>
+      <p className="text-md font-bold text-right pt-2">合計: 0円</p>
     </div>
   );
 }
