@@ -4,15 +4,8 @@ import "./App.css";
 import { useState } from "react";
 
 const Menu = (props) => {
-  const [count, setCount] = useState(0);
-  const decrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
-  const increment = () => {
-    setCount(count + 1);
-  };
+  const decrement = () => {};
+  const increment = () => {};
   return (
     <li className={`${menuBox}`}>
       <button
@@ -27,7 +20,7 @@ const Menu = (props) => {
       >
         +
       </button>
-      {props.label}({props.price}円 × {count}個)
+      {props.label}({props.price}円 × {props.count}個)
     </li>
   );
 };
@@ -38,14 +31,22 @@ const menus = [
   { id: 2, label: "サラダ", price: 300 },
 ];
 
-const menuItems = menus.map((menu) => {
-  return <Menu key={menu.label} label={menu.label} price={menu.price} />;
-});
-
 const menuBox =
   "flex items-center justify-center text-md font-bold border rounded-2xl mt-2 p-2 border-gray-500";
 
 function App() {
+  const [counts, setCounts] = useState([0, 0, 0]);
+  const menuItems = menus.map((menu) => {
+    return (
+      <Menu
+        key={menu.id}
+        count={counts[menu.id]}
+        label={menu.label}
+        price={menu.price}
+      />
+    );
+  });
+
   return (
     <div className="max-w-md mx-auto bg-red-200 px-4 py-4 rounded-xl">
       <h1 className="text-2xl font-bold text-zinc-900 mb-6 text-center">
