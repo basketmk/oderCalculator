@@ -46,6 +46,10 @@ function App() {
       />
     );
   });
+  const total =
+    menus[0].price * counts[0] +
+    menus[1].price * counts[1] +
+    menus[2].price * counts[2];
 
   return (
     <div className="max-w-md mx-auto bg-red-200 px-4 py-4 rounded-xl">
@@ -53,7 +57,7 @@ function App() {
         メニュー
       </h1>
       <ul>{menuItems}</ul>
-      <p className="text-md font-bold text-right mt-3 mr-2">合計: 0円</p>
+      <p className="text-md font-bold text-right mt-3 mr-2">合計: {total}円</p>
     </div>
   );
 }
