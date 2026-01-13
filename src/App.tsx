@@ -4,8 +4,12 @@ import "./App.css";
 import { useState } from "react";
 
 const Menu = (props) => {
-  const decrement = () => {};
-  const increment = () => {};
+  const decrement = () => {
+    props.onDecrement();
+  };
+  const increment = () => {
+    props.onIncrement();
+  };
   return (
     <li className={`${menuBox}`}>
       <button
@@ -36,6 +40,14 @@ const menuBox =
 
 function App() {
   const [counts, setCounts] = useState([0, 0, 0]);
+
+  const decrementMenu = () => {
+    console.log("-クリックされました");
+  };
+  const incrementMenu = () => {
+    console.log("+クリックされました");
+  };
+
   const menuItems = menus.map((menu) => {
     return (
       <Menu
@@ -43,6 +55,8 @@ function App() {
         count={counts[menu.id]}
         label={menu.label}
         price={menu.price}
+        onDecrement={decrementMenu}
+        onIncrement={incrementMenu}
       />
     );
   });
