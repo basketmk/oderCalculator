@@ -4,15 +4,28 @@ import "./App.css";
 import { useState } from "react";
 
 const Menu = (props) => {
+  const [count, setCount] = useState(0);
+  const decrement = () => {
+    setCount(count - 1);
+  };
+  const increment = () => {
+    setCount(count + 1);
+  };
   return (
     <li className={`${menuBox}`}>
-      <button className="w-8 h-8 border rounded flex items-center justify-center font-bold mr-2 bg-gray-200">
+      <button
+        className="w-8 h-8 border rounded flex items-center justify-center font-bold mr-2 bg-gray-200"
+        onClick={decrement}
+      >
         -
       </button>
-      <button className="w-8 h-8 border rounded flex items-center justify-center font-bold mr-5 bg-gray-200">
+      <button
+        className="w-8 h-8 border rounded flex items-center justify-center font-bold mr-5 bg-gray-200"
+        onClick={increment}
+      >
         +
       </button>
-      {props.label}({props.price}円 × 0個)
+      {props.label}({props.price}円 × {count}個)
     </li>
   );
 };
