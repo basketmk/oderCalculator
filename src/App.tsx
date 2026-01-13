@@ -17,6 +17,16 @@ const Menu = (props) => {
   );
 };
 
+const menus = [
+  { id: 0, label: "牛丼", price: 400 },
+  { id: 1, label: "カレー", price: 500 },
+  { id: 2, label: "サラダ", price: 300 },
+];
+
+const menuItems = menus.map((menu) => {
+  return <Menu key={menu.label} label={menu.label} price={menu.price} />;
+});
+
 const menuBox =
   "flex items-center justify-center text-md font-bold border rounded-2xl mt-2 p-2 border-gray-500";
 
@@ -26,11 +36,7 @@ function App() {
       <h1 className="text-2xl font-bold text-zinc-900 mb-6 text-center">
         メニュー
       </h1>
-      <ul>
-        <Menu label="牛丼" price={400} />
-        <Menu label="カレー" price={500} />
-        <Menu label="サラダ" price={300} />
-      </ul>
+      <ul>{menuItems}</ul>
       <p className="text-md font-bold text-right mt-3 mr-2">合計: 0円</p>
     </div>
   );
