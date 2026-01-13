@@ -32,7 +32,7 @@ const menuBox =
 
 function App() {
   return (
-    <div className="max-w-xl mx-auto bg-red-200 px-4 py-4 rounded-xl">
+    <div className="max-w-md mx-auto bg-red-200 px-4 py-4 rounded-xl">
       <h1 className="text-2xl font-bold text-zinc-900 mb-6 text-center">
         メニュー
       </h1>
