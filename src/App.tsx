@@ -4,7 +4,13 @@ import "./App.css";
 import { useState } from "react";
 
 const Menu = (props) => {
-  return <li className={`${menuBox}`}>{props.label}</li>;
+  return (
+    <li className={`${menuBox}`}>
+      <button className="border p-2">-</button>
+      <button className="border p-2">+</button>
+      {props.label}({props.price}円 × 0個)
+    </li>
+  );
 };
 
 const menuBox = "text-md font-bold border rounded-2xl mt-2 p-2 border-gray-500";
@@ -16,9 +22,9 @@ function App() {
         メニュー
       </h1>
       <ul>
-        <Menu label="牛丼" />
-        <Menu label="カレー" />
-        <Menu label="サラダ" />
+        <Menu label="牛丼" price={400} />
+        <Menu label="カレー" price={500} />
+        <Menu label="サラダ" price={300} />
       </ul>
       <p className="text-md font-bold text-right mt-3 mr-2">合計: 0円</p>
     </div>
