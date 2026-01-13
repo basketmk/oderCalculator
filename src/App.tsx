@@ -6,14 +6,19 @@ import { useState } from "react";
 const Menu = (props) => {
   return (
     <li className={`${menuBox}`}>
-      <button className="border p-2">-</button>
-      <button className="border p-2">+</button>
+      <button className="w-8 h-8 border rounded flex items-center justify-center font-bold mr-2 bg-gray-200">
+        -
+      </button>
+      <button className="w-8 h-8 border rounded flex items-center justify-center font-bold mr-5 bg-gray-200">
+        +
+      </button>
       {props.label}({props.price}円 × 0個)
     </li>
   );
 };
 
-const menuBox = "text-md font-bold border rounded-2xl mt-2 p-2 border-gray-500";
+const menuBox =
+  "flex items-center justify-center text-md font-bold border rounded-2xl mt-2 p-2 border-gray-500";
 
 function App() {
   return (
