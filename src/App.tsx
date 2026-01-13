@@ -8,7 +8,7 @@ export default function App() {
     "text-md font-bold border rounded-2xl mt-2 p-2 border-gray-500";
 
   return (
-    <div className="bg-red-200 px-4 py-4 rounded-xl">
+    <div className="max-w-xl bg-red-200 px-4 py-4 rounded-xl">
       <h1 className="text-2xl font-bold text-zinc-900 mb-6 text-center">
         メニュー
       </h1>
